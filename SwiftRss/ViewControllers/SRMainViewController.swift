@@ -13,9 +13,18 @@ class SRMainViewController: UIViewController {
     override func viewDidLoad() {
       
         super.viewDidLoad()
-     
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(vc: self)
+        
+        //UIBarButtonItem.addURLBarButtonItemForViewController(self)
+        
+        
     }
     
+    func addURLButtonPressed() {
+    
+        println("add button pressed")
+        
+    }
     
 
 }
