@@ -8,23 +8,25 @@
 
 import UIKit
 
-class SRMainViewController: UIViewController {
+class SRMainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    let urlStore = SRServiceProvider.sharedInstance.urlStore
     
     override func viewDidLoad() {
-      
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(vc: self)
-        
-        //UIBarButtonItem.addURLBarButtonItemForViewController(self)
-        
-        
     }
     
-    func addURLButtonPressed() {
-    
-        println("add button pressed")
-        
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return urlStore.URLContainer.count
     }
     
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell : UITableViewCell! = UITableViewCell(style: .Default, reuseIdentifier:"urlCellIdentifier")
+        cell.textLabel.text = urlStore.URLContainer[indexPath.row].absoluteString
+        
+        return cell
+    }
 
 }

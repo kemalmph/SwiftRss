@@ -18,10 +18,18 @@ extension UIBarButtonItem {
     
     }
     
-    convenience init(vc viewController : UIViewController) {
+    convenience init(vc viewController : UIViewController, ps position : String) {
+        var buttonImage : UIImage!
+        var selector : Selector!
         
-        self.init(image: UIImage(named:"AddURLButton"), style: UIBarButtonItemStyle.Plain, target: viewController, action: Selector("addURLButtonPressed"))
-        
+        if(position == "left") {
+            buttonImage = UIImage(named:"AddURLButton")
+            selector = Selector("addURLButtonPressed")
+        } else {
+            buttonImage = UIImage(named: "URLContainer")
+            selector = Selector("openURLContainer")
+        }
+        self.init(image: buttonImage, style: UIBarButtonItemStyle.Plain, target: viewController, action: selector)
     }
     
 }
