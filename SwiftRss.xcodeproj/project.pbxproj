@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182DB08E1A6D0572002F6D57 /* SRFeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182DB08D1A6D0572002F6D57 /* SRFeedParser.swift */; };
 		18360AE2198125B0009E0079 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18360AE1198125B0009E0079 /* AppDelegate.swift */; };
 		18360AE7198125B0009E0079 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18360AE5198125B0009E0079 /* Main.storyboard */; };
 		18360AE9198125B1009E0079 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18360AE8198125B1009E0079 /* Images.xcassets */; };
 		18360AF5198125B1009E0079 /* SwiftRssTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18360AF4198125B1009E0079 /* SwiftRssTests.swift */; };
 		183B1E331A695963007D7ED1 /* SRContentDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B1E321A695963007D7ED1 /* SRContentDownloader.swift */; };
-		183B1E351A695EC4007D7ED1 /* SRDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B1E341A695EC4007D7ED1 /* SRDataParser.swift */; };
+		183B1E351A695EC4007D7ED1 /* SRParserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B1E341A695EC4007D7ED1 /* SRParserManager.swift */; };
 		18A34D531A67E7FB004359A1 /* SRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A34D521A67E7FB004359A1 /* SRMainViewController.swift */; };
 		18A34D581A67E9F3004359A1 /* BarButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A34D571A67E9F3004359A1 /* BarButtonExtension.swift */; };
 		18E292321A6825F200554762 /* SRURLDefinerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E292311A6825F200554762 /* SRURLDefinerViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182DB08D1A6D0572002F6D57 /* SRFeedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRFeedParser.swift; path = Services/SRFeedParser.swift; sourceTree = "<group>"; };
 		18360ADC198125B0009E0079 /* SwiftRss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18360AE0198125B0009E0079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18360AE1198125B0009E0079 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +46,7 @@
 		18360AF3198125B1009E0079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18360AF4198125B1009E0079 /* SwiftRssTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRssTests.swift; sourceTree = "<group>"; };
 		183B1E321A695963007D7ED1 /* SRContentDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRContentDownloader.swift; path = Services/SRContentDownloader.swift; sourceTree = "<group>"; };
-		183B1E341A695EC4007D7ED1 /* SRDataParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRDataParser.swift; path = Services/SRDataParser.swift; sourceTree = "<group>"; };
+		183B1E341A695EC4007D7ED1 /* SRParserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRParserManager.swift; path = Services/SRParserManager.swift; sourceTree = "<group>"; };
 		18A34D521A67E7FB004359A1 /* SRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRMainViewController.swift; path = ViewControllers/SRMainViewController.swift; sourceTree = "<group>"; };
 		18A34D571A67E9F3004359A1 /* BarButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BarButtonExtension.swift; path = Extensions/BarButtonExtension.swift; sourceTree = "<group>"; };
 		18E292311A6825F200554762 /* SRURLDefinerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRURLDefinerViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +160,8 @@
 				18E2923C1A69438600554762 /* SRSessionProvider.swift */,
 				18E2923E1A69457500554762 /* SRRequestProvider.swift */,
 				183B1E321A695963007D7ED1 /* SRContentDownloader.swift */,
-				183B1E341A695EC4007D7ED1 /* SRDataParser.swift */,
+				183B1E341A695EC4007D7ED1 /* SRParserManager.swift */,
+				182DB08D1A6D0572002F6D57 /* SRFeedParser.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			files = (
 				18E292361A69007000554762 /* SRURLStore.swift in Sources */,
 				18A34D581A67E9F3004359A1 /* BarButtonExtension.swift in Sources */,
+				182DB08E1A6D0572002F6D57 /* SRFeedParser.swift in Sources */,
 				18A34D531A67E7FB004359A1 /* SRMainViewController.swift in Sources */,
 				18E2923A1A69238D00554762 /* SRServiceProvider.swift in Sources */,
 				18E292321A6825F200554762 /* SRURLDefinerViewController.swift in Sources */,
@@ -272,7 +276,7 @@
 				18E292381A6915B700554762 /* SRReaderContentViewController.swift in Sources */,
 				18360AE2198125B0009E0079 /* AppDelegate.swift in Sources */,
 				18E292341A68283500554762 /* StringURLValidator.swift in Sources */,
-				183B1E351A695EC4007D7ED1 /* SRDataParser.swift in Sources */,
+				183B1E351A695EC4007D7ED1 /* SRParserManager.swift in Sources */,
 				18E2923D1A69438600554762 /* SRSessionProvider.swift in Sources */,
 				183B1E331A695963007D7ED1 /* SRContentDownloader.swift in Sources */,
 			);

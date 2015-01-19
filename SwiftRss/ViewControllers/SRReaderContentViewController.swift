@@ -11,16 +11,24 @@ import UIKit
 let kFromReaderContentToDetailSegueIdentifier = "FromReaderContentToDetailSegueIdentifier"
 let kFromReaderContentToURLContainerSegueIdentifier = "FromReaderContentToURLContainerSegueIdentifier"
 
+enum BarPosition : Int {
+    case Left
+    case Right
+}
+
 class SRReaderContentViewController: UIViewController {
+    
+    private let parserManager : SRParserManager = SRParserManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Latest news"
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(vc: self, ps: "left")
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(vc: self, ps: "right")
-        SRDataParser.contentOfURL(SRServiceProvider.sharedInstance.urlStore.URLContainer[0]) {
-        (dictionary) in
-            println(dictionary)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(vc: self, ps: .Left)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(vc: self, ps: .Right)
+        
+        parserManager.contentOfURL(SRServiceProvider.sharedInstance.urlStore.URLContainer[0]) {
+        (contentArray) in
+            println(contentArray)
         }
     }
     

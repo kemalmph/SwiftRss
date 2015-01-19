@@ -15,7 +15,7 @@ class SRURLStore: NSObject {
     override init() {
         
         self.URLContainer = Array()
-        self.URLContainer.append(NSURL(string:"http://index.hu/24ora/rss/")!)
+        self.URLContainer.append(NSURL(string:"http://feeds.bbci.co.uk/news/uk/rss.xml?edition=uk")!)
         super.init()
        
     }
