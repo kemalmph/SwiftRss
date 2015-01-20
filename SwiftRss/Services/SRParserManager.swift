@@ -10,10 +10,9 @@ import UIKit
 
 class SRParserManager: NSObject, SRFeedParserDelegate {
     
-    var completion : ((NSArray?) -> ())!// = {}
+    private var completion : ((success : Bool, content: Array<SRFeedModel>?) -> ())!
     
-    
-    func contentOfURL(url : NSURL, completion : (NSArray?) -> ()) {
+    func contentOfURL(url : NSURL, completion : ((success : Bool, content: Array<SRFeedModel>?) -> ())) {
         SRContentDownloader.dataFromURL(url){ (downloadedData : NSData) in
             self.completion = completion
             var parser : SRFeedParser = SRFeedParser(url: url, data: downloadedData, delegate : self)
@@ -22,11 +21,17 @@ class SRParserManager: NSObject, SRFeedParserDelegate {
     }
     
     func parsingDidFinishWithResult(result : NSArray?) {
-        self.completion(result)
+        var modelArray : Array<SRFeedModel> = Array()
+        for dict in result! {
+            var feedContent = SRFeedModel(dictionary: dict as NSDictionary)
+            modelArray.append(feedContent)
+        }
+        
+        self.completion(success: true, content: modelArray)
     }
     
     func parsingDidFinishWithError(error : NSError) {
-        println(error)
+        self.completion(success: false, content: nil)
     }
     
 }

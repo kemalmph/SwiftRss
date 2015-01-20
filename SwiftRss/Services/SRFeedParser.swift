@@ -28,8 +28,8 @@ protocol SRFeedParserDelegate {
     private var parser : NSXMLParser?
     private var feedContentArray = NSMutableArray()
     private var aFeedContentDict = NSMutableDictionary()
-    private var currentElement : NSString?
-    private var currentNodeContent : NSMutableString?
+    private var currentElement : String?
+    private var currentNodeContent : String?
     
     init(url : NSURL, data : NSData, delegate : SRFeedParserDelegate) {
         self.url = url
@@ -39,7 +39,6 @@ protocol SRFeedParserDelegate {
     }
     
     func startParsing() {
-        
         if self.url == nil || self.data == nil {
             let error = NSError(domain: "com.switfrss.missingParamaters", code:ParserError.MissingParameters.rawValue, userInfo:nil)
             self.delegate?.parsingDidFinishWithError(error)
@@ -85,9 +84,9 @@ protocol SRFeedParserDelegate {
         if objcString.rangeOfString("\n").location == NSNotFound {
             
             if self.currentNodeContent == nil {
-                self.currentNodeContent = NSMutableString()
+                self.currentNodeContent = String()
             }
-            self.currentNodeContent!.appendString(string)
+            self.currentNodeContent! += string
             aFeedContentDict.setObject(self.currentNodeContent!, forKey:self.currentElement!)
             
         }
