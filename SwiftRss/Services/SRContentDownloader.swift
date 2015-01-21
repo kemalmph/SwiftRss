@@ -9,7 +9,6 @@
 import Foundation
 
 class SRContentDownloader: NSObject {
-    // add kerdojel oda, ahol lehet mondjuk nil is
     class func dataFromURL(url : NSURL, completion: (downloadedData : NSData) -> ()) {
         var request = SRRequestProvider.fetchURLContentRequest(url)
         var session = SRServiceProvider.sharedInstance.mainSession.session

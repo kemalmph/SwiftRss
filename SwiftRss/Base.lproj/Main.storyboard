@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iQA-1K-eh1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iQA-1K-eh1">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -157,11 +157,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XR4-MT-0LY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XR4-MT-0LY">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="readerContentIdentifier" rowHeight="85" id="p3G-VP-xws" customClass="SRReaderContentTableViewCell" customModule="SwiftRss" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="readerContentIdentifier" rowHeight="75" id="p3G-VP-xws" customClass="SRReaderContentTableViewCell" customModule="SwiftRss" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p3G-VP-xws" id="EUR-oF-E5B">
@@ -196,19 +196,31 @@
                                                     </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CKp-7C-pxq">
-                                                    <rect key="frame" x="8" y="9" width="50" height="50"/>
+                                                    <rect key="frame" x="8" y="9" width="50" height="49"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="jTV-Ke-6XL"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pubDate" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2RF-gD-eK7">
+                                                    <rect key="frame" x="8" y="54" width="50" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="QWy-Xd-Iu2"/>
+                                                        <constraint firstAttribute="height" constant="21" id="qxZ-CU-BRp"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Huo-hq-oKR" firstAttribute="leading" secondItem="CKp-7C-pxq" secondAttribute="trailing" constant="8" id="7Lv-pm-vhP"/>
                                                 <constraint firstItem="r0O-l6-fCi" firstAttribute="trailing" secondItem="EUR-oF-E5B" secondAttribute="trailingMargin" constant="5" id="8z0-d4-MKB"/>
                                                 <constraint firstItem="r0O-l6-fCi" firstAttribute="leading" secondItem="CKp-7C-pxq" secondAttribute="trailing" constant="8" id="9e4-YF-Qun"/>
+                                                <constraint firstItem="2RF-gD-eK7" firstAttribute="leading" secondItem="EUR-oF-E5B" secondAttribute="leadingMargin" id="EWf-KF-dKE"/>
                                                 <constraint firstItem="Huo-hq-oKR" firstAttribute="trailing" secondItem="EUR-oF-E5B" secondAttribute="trailingMargin" constant="2" id="Epx-Qd-sar"/>
-                                                <constraint firstItem="CKp-7C-pxq" firstAttribute="bottom" secondItem="EUR-oF-E5B" secondAttribute="bottomMargin" constant="-17" id="FDO-7y-19g"/>
+                                                <constraint firstItem="CKp-7C-pxq" firstAttribute="bottom" secondItem="EUR-oF-E5B" secondAttribute="bottomMargin" constant="-8" id="FDO-7y-19g"/>
                                                 <constraint firstItem="CKp-7C-pxq" firstAttribute="top" secondItem="EUR-oF-E5B" secondAttribute="topMargin" constant="1" id="KFj-8N-rwN"/>
+                                                <constraint firstItem="2RF-gD-eK7" firstAttribute="top" secondItem="CKp-7C-pxq" secondAttribute="bottom" constant="-4" id="Lxm-E1-tAQ"/>
                                                 <constraint firstItem="CKp-7C-pxq" firstAttribute="leading" secondItem="EUR-oF-E5B" secondAttribute="leadingMargin" id="X5O-sG-uA3"/>
                                                 <constraint firstItem="r0O-l6-fCi" firstAttribute="trailing" secondItem="EUR-oF-E5B" secondAttribute="trailingMargin" id="ZGe-rE-Xlc"/>
                                                 <constraint firstItem="r0O-l6-fCi" firstAttribute="top" secondItem="Huo-hq-oKR" secondAttribute="bottom" constant="3" id="cke-Ng-h3P"/>
@@ -227,6 +239,7 @@
                                         <connections>
                                             <outlet property="contentImageView" destination="CKp-7C-pxq" id="aIr-3A-h7u"/>
                                             <outlet property="descriptionLabel" destination="r0O-l6-fCi" id="gK5-0m-Yxv"/>
+                                            <outlet property="pubDateLabel" destination="2RF-gD-eK7" id="w4X-rQ-zc7"/>
                                             <outlet property="titleLabel" destination="Huo-hq-oKR" id="oSd-2s-Qg2"/>
                                         </connections>
                                     </tableViewCell>
@@ -255,7 +268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P7G-W5-rwp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-112" y="425"/>
+            <point key="canvasLocation" x="-112" y="432"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="kx8-Dz-2u8">

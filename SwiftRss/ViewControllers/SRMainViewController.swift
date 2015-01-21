@@ -24,8 +24,7 @@ class SRMainViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell : UITableViewCell! = UITableViewCell(style: .Default, reuseIdentifier:"urlCellIdentifier")
-        cell.textLabel!.text = urlStore.URLContainer[indexPath.row].absoluteString
-        
+        cell.textLabel.text = urlStore.URLContainer[indexPath.row].absoluteString
         
         return cell
     }

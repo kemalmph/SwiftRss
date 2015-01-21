@@ -70,7 +70,22 @@ protocol SRFeedParserDelegate {
                 feedContentArray.append(tmpFeedContentDict)
                 aFeedContentDict.removeAllObjects()
             }
+        } else if elementName == "media:thumbnail" {
+            aFeedContentDict["thumbnail"] = attributeDict["url"]
         }
+    }
+    
+    func parser(parser: NSXMLParser!, foundCDATA CDATABlock: NSData!) {
+        
+        var content = NSString(data: CDATABlock, encoding: NSUTF8StringEncoding)
+        if (content?.hasPrefix("<img") != nil) {
+            var range = content?.rangeOfString("/>", options:NSStringCompareOptions.CaseInsensitiveSearch)
+            var rangeOfThumbnail = NSMakeRange(10, range!.location - 11)
+            var imageThumbnail = content?.substringWithRange(rangeOfThumbnail)
+            aFeedContentDict["thumbnail"] = imageThumbnail
+            content = content?.substringWithRange(NSMakeRange(range!.location + 3, content!.length - range!.location - 3))
+        }
+        aFeedContentDict[self.currentElement!] = content
     }
     
     func parser(parser: NSXMLParser!, didEndElement elementName: String!, namespaceURI: String!, qualifiedName qName: String!) {
@@ -82,13 +97,13 @@ protocol SRFeedParserDelegate {
         var objcString : NSString! = string
         
         if objcString.rangeOfString("\n").location == NSNotFound {
-            
+        
             if self.currentNodeContent == nil {
                 self.currentNodeContent = String()
             }
-            self.currentNodeContent! += string
+            var rippedString = string.ripHTMLTags()
+            self.currentNodeContent! += rippedString
             aFeedContentDict.setObject(self.currentNodeContent!, forKey:self.currentElement!)
-            
         }
         
     }

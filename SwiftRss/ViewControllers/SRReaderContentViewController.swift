@@ -35,21 +35,7 @@ class SRReaderContentViewController: UIViewController, UITableViewDelegate, UITa
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(vc: self, ps: .Left)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(vc: self, ps: .Right)
         imageProvider = SRImageProvider(tv : self.tableView)
-        NSNotificationCenter.defaultCenter().postNotificationName(kStartLoading, object: nil)
-        parserManager.contentOfURL(SRServiceProvider.sharedInstance.urlStore.URLContainer[0]) {
-            (success, contentArray) in
-            dispatch_sync(dispatch_get_main_queue(), { () -> Void in
-                NSNotificationCenter.defaultCenter().postNotificationName(kStopLoading, object: nil)
-                if(success) {
-                    self.contentArray = contentArray!
-                    self.tableView.reloadData()
-                } else {
-                    var parserFailAlert = UIAlertController(title:"error", message: "parsing has failed, please try again later", preferredStyle:.Alert)
-                    parserFailAlert.addAction(UIAlertAction(title: "ok", style: .Cancel, handler: nil))
-                    self.presentViewController(parserFailAlert, animated: true, completion: nil)
-                }
-            })
-        }
+        self.refreshFeeds()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,6 +67,24 @@ class SRReaderContentViewController: UIViewController, UITableViewDelegate, UITa
             var destinationViewController = segue.destinationViewController as SRWebViewController
             var url = self.contentArray[choosenCell].feedURL
             destinationViewController.contentURL = url
+        }
+    }
+    
+    func refreshFeeds() {
+        NSNotificationCenter.defaultCenter().postNotificationName(kStartLoading, object: nil)
+        parserManager.contentOfURL(SRServiceProvider.sharedInstance.urlStore.URLContainer) {
+            (success, contentArray) in
+            dispatch_sync(dispatch_get_main_queue(), { () -> Void in
+                NSNotificationCenter.defaultCenter().postNotificationName(kStopLoading, object: nil)
+                if(success) {
+                    self.contentArray = contentArray!
+                    self.tableView.reloadData()
+                } else {
+                    var parserFailAlert = UIAlertController(title:"error", message: "parsing has failed, please try again later", preferredStyle:.Alert)
+                    parserFailAlert.addAction(UIAlertAction(title: "ok", style: .Cancel, handler: nil))
+                    self.presentViewController(parserFailAlert, animated: true, completion: nil)
+                }
+            })
         }
     }
     

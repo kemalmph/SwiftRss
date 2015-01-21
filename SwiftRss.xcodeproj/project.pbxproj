@@ -12,6 +12,7 @@
 		18360AE7198125B0009E0079 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18360AE5198125B0009E0079 /* Main.storyboard */; };
 		18360AE9198125B1009E0079 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18360AE8198125B1009E0079 /* Images.xcassets */; };
 		18360AF5198125B1009E0079 /* SwiftRssTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18360AF4198125B1009E0079 /* SwiftRssTests.swift */; };
+		183796A41A6FE8810064DDCB /* SRStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183796A31A6FE8810064DDCB /* SRStringExtension.swift */; };
 		183B1E331A695963007D7ED1 /* SRContentDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B1E321A695963007D7ED1 /* SRContentDownloader.swift */; };
 		183B1E351A695EC4007D7ED1 /* SRParserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183B1E341A695EC4007D7ED1 /* SRParserManager.swift */; };
 		18A34D531A67E7FB004359A1 /* SRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A34D521A67E7FB004359A1 /* SRMainViewController.swift */; };
@@ -27,6 +28,7 @@
 		18E2923F1A69457500554762 /* SRRequestProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E2923E1A69457500554762 /* SRRequestProvider.swift */; };
 		18FF98501A6E59180048B0D0 /* SRFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF984F1A6E59180048B0D0 /* SRFeedModel.swift */; };
 		18FF98521A6E5D7E0048B0D0 /* SRNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF98511A6E5D7E0048B0D0 /* SRNavigationViewController.swift */; };
+		18FF98581A6F9CB80048B0D0 /* SRDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FF98571A6F9CB80048B0D0 /* SRDateExtension.swift */; };
 		EC34B89E1A6F0C5D0095302F /* SRImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC34B89D1A6F0C5D0095302F /* SRImageProvider.swift */; };
 		EC34B8A01A6F0E990095302F /* SRImageDownloaderOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC34B89F1A6F0E990095302F /* SRImageDownloaderOperation.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +53,7 @@
 		18360AEE198125B1009E0079 /* SwiftRssTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftRssTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18360AF3198125B1009E0079 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18360AF4198125B1009E0079 /* SwiftRssTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftRssTests.swift; sourceTree = "<group>"; };
+		183796A31A6FE8810064DDCB /* SRStringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SRStringExtension.swift; sourceTree = "<group>"; };
 		183B1E321A695963007D7ED1 /* SRContentDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRContentDownloader.swift; path = Services/SRContentDownloader.swift; sourceTree = "<group>"; };
 		183B1E341A695EC4007D7ED1 /* SRParserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRParserManager.swift; path = Services/SRParserManager.swift; sourceTree = "<group>"; };
 		18A34D521A67E7FB004359A1 /* SRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRMainViewController.swift; path = ViewControllers/SRMainViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		18E2923E1A69457500554762 /* SRRequestProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRRequestProvider.swift; path = Services/SRRequestProvider.swift; sourceTree = "<group>"; };
 		18FF984F1A6E59180048B0D0 /* SRFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRFeedModel.swift; path = Model/SRFeedModel.swift; sourceTree = "<group>"; };
 		18FF98511A6E5D7E0048B0D0 /* SRNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRNavigationViewController.swift; path = ViewControllers/SRNavigationViewController.swift; sourceTree = "<group>"; };
+		18FF98571A6F9CB80048B0D0 /* SRDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRDateExtension.swift; path = Extensions/SRDateExtension.swift; sourceTree = "<group>"; };
 		EC34B89D1A6F0C5D0095302F /* SRImageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRImageProvider.swift; path = Services/SRImageProvider.swift; sourceTree = "<group>"; };
 		EC34B89F1A6F0E990095302F /* SRImageDownloaderOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SRImageDownloaderOperation.swift; path = Services/SRImageDownloaderOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,8 +118,7 @@
 				18E2923B1A69239800554762 /* Services */,
 				18A34D591A67E9FE004359A1 /* Extensions */,
 				18A34D541A67E811004359A1 /* ViewControllers */,
-				18360AE5198125B0009E0079 /* Main.storyboard */,
-				18360AE8198125B1009E0079 /* Images.xcassets */,
+				18FF98541A6F99430048B0D0 /* Resource */,
 				18360ADF198125B0009E0079 /* Supporting Files */,
 			);
 			path = SwiftRss;
@@ -164,6 +167,8 @@
 			children = (
 				18A34D571A67E9F3004359A1 /* BarButtonExtension.swift */,
 				18E292331A68283500554762 /* StringURLValidator.swift */,
+				18FF98571A6F9CB80048B0D0 /* SRDateExtension.swift */,
+				183796A31A6FE8810064DDCB /* SRStringExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -198,6 +203,15 @@
 				18FF984F1A6E59180048B0D0 /* SRFeedModel.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		18FF98541A6F99430048B0D0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				18360AE5198125B0009E0079 /* Main.storyboard */,
+				18360AE8198125B1009E0079 /* Images.xcassets */,
+			);
+			name = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +318,7 @@
 				EC34B89E1A6F0C5D0095302F /* SRImageProvider.swift in Sources */,
 				18A34D581A67E9F3004359A1 /* BarButtonExtension.swift in Sources */,
 				182DB08E1A6D0572002F6D57 /* SRFeedParser.swift in Sources */,
+				18FF98581A6F9CB80048B0D0 /* SRDateExtension.swift in Sources */,
 				18A34D531A67E7FB004359A1 /* SRMainViewController.swift in Sources */,
 				18A3F2811A6E522A0017C714 /* SRWebViewController.swift in Sources */,
 				18E2923A1A69238D00554762 /* SRServiceProvider.swift in Sources */,
@@ -312,6 +327,7 @@
 				18E2923F1A69457500554762 /* SRRequestProvider.swift in Sources */,
 				EC34B8A01A6F0E990095302F /* SRImageDownloaderOperation.swift in Sources */,
 				18E292381A6915B700554762 /* SRReaderContentViewController.swift in Sources */,
+				183796A41A6FE8810064DDCB /* SRStringExtension.swift in Sources */,
 				18360AE2198125B0009E0079 /* AppDelegate.swift in Sources */,
 				18E292341A68283500554762 /* StringURLValidator.swift in Sources */,
 				18FF98521A6E5D7E0048B0D0 /* SRNavigationViewController.swift in Sources */,

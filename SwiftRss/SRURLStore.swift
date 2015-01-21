@@ -15,10 +15,10 @@ class SRURLStore: NSObject {
     override init() {
         
         self.URLContainer = Array()
-//        self.URLContainer.append(NSURL(string: "http://www.whowhatwear.com/rss")!)
-//        self.URLContainer.append(NSURL(string:"http://feeds.bbci.co.uk/news/uk/rss.xml?edition=uk")!)
-        self.URLContainer.append(NSURL(string:"http://rss.cnn.com/rss/cnn_topstories.rss")!)
-            super.init()
+        self.URLContainer.append(NSURL(string: "http://index.hu/24ora/rss/")!)
+        self.URLContainer.append(NSURL(string:"http://feeds.bbci.co.uk/news/uk/rss.xml?edition=uk")!)
+        self.URLContainer.append(NSURL(string:"http://feeds.gawker.com/gizmodo/full")!)
+        super.init()
        
     }
     

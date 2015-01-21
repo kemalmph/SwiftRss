@@ -26,7 +26,7 @@ class SRImageDownloaderOperation: NSOperation {
     }
     
     override func main() {
-        if self.cancelled {
+        if self.cancelled || self.feedModel.feedImageURL == nil {
             return
         }
         self.feedModel.state = .Downloading
@@ -42,9 +42,7 @@ class SRImageDownloaderOperation: NSOperation {
             self.feedModel.feedImage = UIImage(named: "ImagePlaceholder")!
             self.feedModel.state = .Failed
         }
-//         dispatch_sync(dispatch_get_main_queue(), { () -> Void in
-            self.delegate?.didFinishDownloadingImage(self.indexPath)
-//         })
+        self.delegate?.didFinishDownloadingImage(self.indexPath)
     }
     
 }

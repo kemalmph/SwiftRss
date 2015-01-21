@@ -24,12 +24,17 @@ class SRFeedModel: NSObject {
     var feedImageURL : NSURL?
     var feedImage = UIImage(named: "ImagePlaceholder")
     var state : ImageState = .New
+    var feedDisplayPubDate : String?
+    var feedComparePubDate : String?
     
     init(dictionary: NSDictionary) {
         self.feedTitle = dictionary["title"] as String!
         self.feedDescription = dictionary["description"] as String!
-        self.feedURL = NSURL(string:dictionary["link"] as String!)
-        self.feedImageURL = NSURL(string: dictionary["guid"] as String!)
+        self.feedURL = NSURL(string:dictionary["guid"] as String!)
+       // self.feedImageURL = NSURL(string: dictionary["guid"] as String!)
+        var(displayString, compareString) = SRDateHelper().dayAndTime(dictionary["pubDate"] as String!)
+        self.feedDisplayPubDate = displayString
+        self.feedComparePubDate = compareString
+        
     }
-    
 }

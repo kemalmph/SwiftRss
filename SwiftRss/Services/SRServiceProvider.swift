@@ -17,7 +17,6 @@ class SRServiceProvider: NSObject {
     
     private var urlStoreInstance : SRURLStore?
     private var sessionProviderInstance : SRSessionProvider?
-//    private var imageProviderInstace : SRImageProvider?
     
     class var sharedInstance : SRServiceProvider {
             dispatch_once(&Static.onceToken){
@@ -32,13 +31,6 @@ class SRServiceProvider: NSObject {
         }
         return urlStoreInstance!;
     }
-    
-//    var imageProvider : SRImageProvider {
-//        if(imageProviderInstace == nil) {
-//            imageProviderInstace = SRImageProvider()
-//        }
-//        return imageProviderInstace!
-//    }
     
     var mainSession : SRSessionProvider {
         if let session = sessionProviderInstance {
