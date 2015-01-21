@@ -14,7 +14,7 @@ enum ParserError : Int {
 }
 
 protocol SRFeedParserDelegate {
-    func parsingDidFinishWithResult(result : NSArray?)
+    func parsingDidFinishWithResult(result : Array<AnyObject>?)
     func parsingDidFinishWithError(error : NSError)
 }
 
@@ -26,7 +26,7 @@ protocol SRFeedParserDelegate {
     private var data : NSData?
     
     private var parser : NSXMLParser?
-    private var feedContentArray = NSMutableArray()
+    private var feedContentArray = Array<AnyObject>()
     private var aFeedContentDict = NSMutableDictionary()
     private var currentElement : String?
     private var currentNodeContent : String?
@@ -67,7 +67,7 @@ protocol SRFeedParserDelegate {
         if elementName == "item" {
             if aFeedContentDict.count > 0 {
                 var tmpFeedContentDict = NSDictionary(dictionary: aFeedContentDict)
-                feedContentArray.addObject(tmpFeedContentDict)
+                feedContentArray.append(tmpFeedContentDict)
                 aFeedContentDict.removeAllObjects()
             }
         }

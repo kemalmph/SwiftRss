@@ -8,19 +8,28 @@
 
 import UIKit
 
+enum ImageState {
+    case New
+    case Downloading
+    case Downloaded
+    case Failed
+}
+
+
 class SRFeedModel: NSObject {
    
-    var feedTitle : String?
-    var feedDescription : String?
+    var feedTitle : String
+    var feedDescription : String
     var feedURL : NSURL?
-    var feedImage : UIImage?
+    var feedImageURL : NSURL?
+    var feedImage = UIImage(named: "ImagePlaceholder")
+    var state : ImageState = .New
     
     init(dictionary: NSDictionary) {
         self.feedTitle = dictionary["title"] as String!
         self.feedDescription = dictionary["description"] as String!
         self.feedURL = NSURL(string:dictionary["link"] as String!)
-        
-        
+        self.feedImageURL = NSURL(string: dictionary["guid"] as String!)
     }
     
 }

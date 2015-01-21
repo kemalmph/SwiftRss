@@ -20,7 +20,9 @@ class SRParserManager: NSObject, SRFeedParserDelegate {
         }
     }
     
-    func parsingDidFinishWithResult(result : NSArray?) {
+    func parsingDidFinishWithResult(var result : Array<AnyObject>?) {
+//TODO find a better solution to remove title section from feeds
+        result!.removeAtIndex(0)
         var modelArray : Array<SRFeedModel> = Array()
         for dict in result! {
             var feedContent = SRFeedModel(dictionary: dict as NSDictionary)

@@ -15,12 +15,9 @@ class SRReaderContentTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var contentImageView: UIImageView!
     
-    
-    
     func setupCell(model : SRFeedModel) -> () {
         self.titleLabel.text = model.feedTitle
         self.descriptionLabel.text = model.feedDescription
-        
-        
+        self.contentImageView.image = model.feedImage
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iQA-1K-eh1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iQA-1K-eh1">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -168,7 +168,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Huo-hq-oKR" userLabel="Title - Label">
-                                                    <rect key="frame" x="105" y="10" width="482" height="20"/>
+                                                    <rect key="frame" x="66" y="10" width="521" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="487" id="Nhm-Fd-P4a"/>
                                                     </constraints>
@@ -181,7 +181,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r0O-l6-fCi" userLabel="Description - Label">
-                                                    <rect key="frame" x="105" y="33" width="482" height="21"/>
+                                                    <rect key="frame" x="66" y="33" width="521" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="45" id="L7b-XH-9gz"/>
                                                         <constraint firstAttribute="width" constant="487" id="lrg-t0-KRB"/>
@@ -196,9 +196,9 @@
                                                     </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CKp-7C-pxq">
-                                                    <rect key="frame" x="8" y="9" width="89" height="68"/>
+                                                    <rect key="frame" x="8" y="9" width="50" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="89" id="jTV-Ke-6XL"/>
+                                                        <constraint firstAttribute="width" constant="50" id="jTV-Ke-6XL"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -207,7 +207,7 @@
                                                 <constraint firstItem="r0O-l6-fCi" firstAttribute="trailing" secondItem="EUR-oF-E5B" secondAttribute="trailingMargin" constant="5" id="8z0-d4-MKB"/>
                                                 <constraint firstItem="r0O-l6-fCi" firstAttribute="leading" secondItem="CKp-7C-pxq" secondAttribute="trailing" constant="8" id="9e4-YF-Qun"/>
                                                 <constraint firstItem="Huo-hq-oKR" firstAttribute="trailing" secondItem="EUR-oF-E5B" secondAttribute="trailingMargin" constant="2" id="Epx-Qd-sar"/>
-                                                <constraint firstItem="CKp-7C-pxq" firstAttribute="bottom" secondItem="EUR-oF-E5B" secondAttribute="bottomMargin" constant="1" id="FDO-7y-19g"/>
+                                                <constraint firstItem="CKp-7C-pxq" firstAttribute="bottom" secondItem="EUR-oF-E5B" secondAttribute="bottomMargin" constant="-17" id="FDO-7y-19g"/>
                                                 <constraint firstItem="CKp-7C-pxq" firstAttribute="top" secondItem="EUR-oF-E5B" secondAttribute="topMargin" constant="1" id="KFj-8N-rwN"/>
                                                 <constraint firstItem="CKp-7C-pxq" firstAttribute="leading" secondItem="EUR-oF-E5B" secondAttribute="leadingMargin" id="X5O-sG-uA3"/>
                                                 <constraint firstItem="r0O-l6-fCi" firstAttribute="trailing" secondItem="EUR-oF-E5B" secondAttribute="trailingMargin" id="ZGe-rE-Xlc"/>

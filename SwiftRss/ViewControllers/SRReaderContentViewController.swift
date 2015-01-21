@@ -23,29 +23,32 @@ class SRReaderContentViewController: UIViewController, UITableViewDelegate, UITa
     
     @IBOutlet weak var tableView: UITableView!
     
-    
     private let parserManager : SRParserManager = SRParserManager()
     private var contentArray : Array<SRFeedModel> = Array()
     private var choosenCell : Int = 0
+    private var imageProvider : SRImageProvider?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Latest news"
+        
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(vc: self, ps: .Left)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(vc: self, ps: .Right)
+        imageProvider = SRImageProvider(tv : self.tableView)
         NSNotificationCenter.defaultCenter().postNotificationName(kStartLoading, object: nil)
         parserManager.contentOfURL(SRServiceProvider.sharedInstance.urlStore.URLContainer[0]) {
             (success, contentArray) in
-            if(success) {
-                self.contentArray = contentArray!
-                dispatch_sync(dispatch_get_main_queue(), { () -> Void in
-                    NSNotificationCenter.defaultCenter().postNotificationName(kStopLoading, object: nil)
+            dispatch_sync(dispatch_get_main_queue(), { () -> Void in
+                NSNotificationCenter.defaultCenter().postNotificationName(kStopLoading, object: nil)
+                if(success) {
+                    self.contentArray = contentArray!
                     self.tableView.reloadData()
-                })
-            } else {
-                var parserFailAlert = UIAlertController(title:"error", message: "parsing has failed, please try again later", preferredStyle:.Alert)
-                self.presentViewController(parserFailAlert, animated: true, completion: nil)
-            }
+                } else {
+                    var parserFailAlert = UIAlertController(title:"error", message: "parsing has failed, please try again later", preferredStyle:.Alert)
+                    parserFailAlert.addAction(UIAlertAction(title: "ok", style: .Cancel, handler: nil))
+                    self.presentViewController(parserFailAlert, animated: true, completion: nil)
+                }
+            })
         }
     }
     
@@ -56,7 +59,14 @@ class SRReaderContentViewController: UIViewController, UITableViewDelegate, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell = tableView.dequeueReusableCellWithIdentifier(kReaderContentIdentifier) as SRReaderContentTableViewCell
-        cell.setupCell(self.contentArray[indexPath.row] as SRFeedModel)
+        
+        var feedModel = self.contentArray[indexPath.row] as SRFeedModel
+        cell.setupCell(feedModel)
+        
+        if feedModel.state == .New {
+            imageProvider?.feedImage(feedModel, atIndexPath: indexPath)
+        }
+        
         return cell
     }
     
